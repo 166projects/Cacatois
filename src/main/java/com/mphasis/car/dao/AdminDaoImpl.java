@@ -36,6 +36,11 @@ public class AdminDaoImpl implements AdminDao{
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	public void deleteadmin(int cid) {
+		// TODO Auto-generated method stub
+		
+	}
 		
 	
 

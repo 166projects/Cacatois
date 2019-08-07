@@ -11,5 +11,5 @@ public interface AdminDao {
 	public List<User> getallusers();
 	public List<Driver> getalldrivers();
 	public List<Booking> getbookingsbyid(int uid);
-	
+	public void deleteadmin(int cid);
 }

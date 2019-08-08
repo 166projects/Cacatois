@@ -25,6 +25,16 @@ public class Booking implements Serializable{
 	private String source;
 	@Column(nullable=false)
 	private String destination;
+	public int getFair() {
+		return fair;
+	}
+
+	public void setFair(int fair) {
+		this.fair = fair;
+	}
+
+	@Column(nullable=false)
+	private int fair;
 	//@Temporal(TemporalType.TIMESTAMP)
 	//private Date dob;
 	@Column(insertable=false,columnDefinition="date default sysdate")
@@ -115,7 +125,9 @@ public class Booking implements Serializable{
 
 	@Override
 	public String toString() {
-		return "Booking [bid=" + bid + ", source=" + source + ", destination=" + destination + ", reg_date=" + reg_date + ", status=" + status + ", payment=" + payment + "]";
+		return "Booking [bid=" + bid + ", source=" + source + ", destination=" + destination + ", fair=" + fair
+				+ ", reg_date=" + reg_date + ", status=" + status + ", user=" + user + ", payment=" + payment
+				+ ", vehicle=" + vehicle + "]";
 	}
 	
 	

@@ -1,8 +1,8 @@
-package com.mphasis.car.dao;
+package com.mphasis.car.bo;
 
 import com.mphasis.car.entities.User;
 
-public interface AdminDao {
+public interface AdminBo {
 	public void editadmindetails(User users);
 	public void addadmin(int cid);
 	public void deleteadmin(int cid);

@@ -1,6 +1,5 @@
 package com.mphasis.car.dao;
 
-import java.util.List;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -8,8 +7,6 @@ import org.hibernate.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.mphasis.car.entities.Booking;
-import com.mphasis.car.entities.Driver;
 import com.mphasis.car.entities.User;
 @Repository
 public class AdminDaoImpl implements AdminDao{
@@ -21,27 +18,27 @@ public class AdminDaoImpl implements AdminDao{
 		session.update(users);
 		tr.commit();
 	}
-
-	public List<User> getallusers() {
-		// TODO Auto-generated method stub
-		return null;
+	public void addadmin(int cid) {
+		Session session=sessionFactory.openSession();
+		Transaction tr=session.beginTransaction();
+		User us=(User) session.get(User.class,cid);
+		session.update(us);
+		tr.commit();
 	}
-
-	public List<Driver> getalldrivers() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	public List<Booking> getbookingsbyid(int uid) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 	public void deleteadmin(int cid) {
-		// TODO Auto-generated method stub
-		
+
+			Session session=sessionFactory.openSession();
+			Transaction tr=session.beginTransaction();
+			User us=(User) session.get(User.class,cid);
+			session.delete(us);
+			tr.commit();
 	}
-		
-	
+	public void changepassword(int cid) {
+		Session session=sessionFactory.openSession();
+		Transaction tr=session.beginTransaction();
+		User us=(User) session.get(User.class,cid);
+		session.update(us);
+		tr.commit();
+	}
 
 }
